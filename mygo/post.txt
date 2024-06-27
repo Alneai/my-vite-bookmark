@@ -1,0 +1,11 @@
+curl http://localhost:5201/link/add_link \
+    --include \
+    --header "Content-Type: application/json" \
+    --request "POST" \
+    --data '{"type": "index", "title": "Test", "link": "http://alneai.fun", "description": "none"}'
+
+curl http://localhost:5201/link/update_link \
+    --include \
+    --header "Content-Type: application/json" \
+    --request "POST" \
+    --data '{"id": 1, "type": "index", "title": "TestUpdate", "link": "http://alneai.fun", "description": "none"}'
