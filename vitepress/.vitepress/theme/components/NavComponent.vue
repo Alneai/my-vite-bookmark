@@ -83,7 +83,7 @@
 
 const props = defineProps(['page'])
 
-import { ref, reactive, onMounted, toRaw, readonly } from 'vue'
+import { ref, reactive, onMounted} from 'vue'
 import { Delete, Edit } from '@element-plus/icons-vue'
 import axios from 'axios'
 
@@ -98,7 +98,7 @@ const editData = reactive({ data: {} })  // 编辑暂存数据
 
 function onSubmit() {
   formData.data.type = props.page
-  axios.post('/link/add_link', formData.data)
+  axios.post('/link/', formData.data)
   .then(res => {
     formData.data = {}
     dialogSubmitState.value = false
@@ -116,7 +116,7 @@ function onClickEdit(data) {
 }
 
 function onEdit() {
-  axios.post('/link/update_link', editData.data)
+  axios.post('/link/update', editData.data)
   .then(res => {
     dialogEditState.value = false
     getLinks(props.page)
@@ -132,7 +132,7 @@ function onClickDelete(id) {
 }
 
 function onDelete() {
-  axios.get('/link/delete_link/' + deleteColumnId)
+  axios.get('/link/delete/' + deleteColumnId)
   .then(res => {
     dialogDeleteState.value = false
     getLinks(props.page)
@@ -146,6 +146,7 @@ function getLinks(page) {
   axios.get('/link/' + page)
   .then(res => {
     linkData.data = res.data
+    console.log(res)
   })
   .catch(err => {
     alert(err)
@@ -157,7 +158,7 @@ onMounted(() => {
 })
 </script>
   
-<style module>
+<style>
 
 @media screen and (width <= 500px) {
   .delete-dialog {

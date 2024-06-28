@@ -33,7 +33,12 @@ export default defineConfig({
       proxy: {
         '/link/': {
           target: 'http://127.0.0.1:5201',
+          changeOrigin: true
+        },
+        '/data/': {
+          target: 'http://127.0.0.1:5201',
           changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/data/, '')
         }
       }
     }

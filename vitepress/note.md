@@ -1,3 +1,3 @@
 # 笔记
 
-<NoteComponent />
+<NoteComponent page="note"/>
