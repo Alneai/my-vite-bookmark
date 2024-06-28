@@ -1,17 +1,17 @@
-curl http://localhost:5201/link/add_link \
+curl http://localhost:5201/link/ \
     --include \
     --header "Content-Type: application/json" \
     --request "POST" \
-    --data '{"type": "index", "title": "Test", "link": "http://alneai.fun", "description": "none"}'
+    --data '{"type": "index", "title": "Test", "TestPost": "http://alneai.fun", "description": "none"}'
 
-curl http://localhost:5201/link/update_link \
+curl http://localhost:5201/link/update \
     --include \
     --header "Content-Type: application/json" \
     --request "POST" \
     --data '{"id": 1, "type": "index", "title": "TestUpdate", "link": "http://alneai.fun", "description": "none"}'
 
-curl http://localhost:5201/note/add_note \
+curl http://localhost:5201/note/ \
     --include \
     --header "Content-Type: application/json" \
     --request "POST" \
-    --data '{"data": "test"}'
+    --data '{"data": "TestNote"}'
