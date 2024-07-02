@@ -116,7 +116,7 @@ function onClickEdit(data) {
 }
 
 function onEdit() {
-  axios.post('/link/update', editData.data)
+  axios.post('/link/update/', editData.data)
   .then(res => {
     dialogEditState.value = false
     getLinks(props.page)
