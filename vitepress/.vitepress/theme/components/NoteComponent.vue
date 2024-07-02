@@ -126,5 +126,6 @@ onMounted(() => {
 
 .mb-4 {
   margin-top: 5px;
+  margin-bottom: 20px;
 }
 </style>
