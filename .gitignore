@@ -1,6 +1,7 @@
 *.db
-node_modules
-cache
 *.log
 log
+node_modules
+cache
+web.exe
 package-lock.json
