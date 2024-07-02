@@ -62,7 +62,7 @@ const editData = reactive({ data: {} })
 
 function onSubmit() {
   formData.data.type = props.page
-  axios.post('/data/' + props.page + '/add/', formData.data)
+  axios.post('/data/' + props.page + '/add', formData.data)
   .then(res => {
     formData.data = {}
     dialogSubmitState.value = false
@@ -79,7 +79,7 @@ function onClickEdit(data) {
 }
 
 function onEdit() {
-  axios.post('/data/' + props.page + '/update/', editData.data)
+  axios.post('/data/' + props.page + '/update', editData.data)
   .then(res => {
     dialogEditState.value = false
     getLinks(props.page)
