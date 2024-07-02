@@ -98,7 +98,7 @@ const editData = reactive({ data: {} })  // 编辑暂存数据
 
 function onSubmit() {
   formData.data.type = props.page
-  axios.post('/link/', formData.data)
+  axios.post('/link/add/', formData.data)
   .then(res => {
     formData.data = {}
     dialogSubmitState.value = false
