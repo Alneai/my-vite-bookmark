@@ -1,4 +1,13 @@
 <template>
+    <el-row>
+    <el-col :span="6" :offset="20">
+      <div class="mb-4">
+        <el-button>Default</el-button>
+      </div>
+    </el-col>
+  </el-row>
+  
+
   <el-table :data="tableData.data" style="width: 100%" :show-header="false">
     <el-table-column prop="data" label="Date"/>
   </el-table>
@@ -30,5 +39,9 @@ onMounted(() => {
 <style> 
 .el-table__inner-wrapper::before {
   height: 0 !important;
+}
+
+.mb-4 {
+  margin-top: 5px;
 }
 </style>
