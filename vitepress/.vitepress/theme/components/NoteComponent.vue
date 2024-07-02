@@ -1,6 +1,6 @@
 <template>
-    <el-row>
-    <el-col :span="6" :offset="20">
+  <el-row>
+    <el-col :span="6" :offset="22">
       <div class="mb-4">
         <el-button @click="dialogSubmitState = true">Add</el-button>
       </div>
@@ -12,7 +12,7 @@
     <el-table-column prop="data" label="Date"/>
     <el-table-column fixed="right" width="50">
         <template #default="scope">
-          <el-button color="#F56C6C" :icon="Delete" @click="onClickDelete(scope.row.id)"/>
+          <el-button :icon="Delete" @click="onClickDelete(scope.row.id)"/>
         </template>
       </el-table-column>
   </el-table>

@@ -5,13 +5,12 @@
 
     <el-button
       class="add-item-button"
-      style="width: 100%" color="#626aef"
       @click="dialogSubmitState = true">
       Add URL
     </el-button>
 
     <el-table :data="linkData.data">
-      <el-table-column label="URL" width="250">
+      <el-table-column label="URL" width="120">
         <template #default="scope">
           <el-link type="primary" :href="scope.row.link" target="_blank"> {{ scope.row.title }} </el-link>
         </template>
@@ -20,7 +19,7 @@
       <el-table-column fixed="right" width="130">
         <template #default="scope">
           <el-button type="primary" :icon="Edit" @click="onClickEdit(scope.row)"/>
-          <el-button color="#F56C6C" :icon="Delete" @click="onClickDelete(scope.row.id)"/>
+          <el-button :icon="Delete" @click="onClickDelete(scope.row.id)"/>
         </template>
       </el-table-column>
     </el-table>
@@ -174,10 +173,18 @@ onMounted(() => {
 }
 
 .add-item-button {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .dialog-form {
   margin-right: 20px;
+}
+
+.el-table__header {
+  margin-bottom: 0px !important;
+}
+
+.el-table__body {
+  margin-top: 0px !important;
 }
 </style>
